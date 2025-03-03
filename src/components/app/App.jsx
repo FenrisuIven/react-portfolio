@@ -1,15 +1,10 @@
 import './app.css'
-import Header from '../header/Header'
+import IndexPage from '../indexPage/IndexPage'
 
 function App() {
   return (
     <>
-      <Header />
-      <main>
-        <section>
-          <p>Basic app example</p>
-        </section>
-      </main>
+      <IndexPage />
     </>
   )
 }
