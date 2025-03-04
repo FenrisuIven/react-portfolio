@@ -1,19 +1,19 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import './main.css'
+import { StrictMode } from "react";
+import { createRoot } from "react-dom/client";
+import "./main.css";
 
-import App from './components/app/App.jsx';
-import Background from './components/background/Background.jsx';
+import IndexPage from "./components/indexPage/IndexPage.jsx";
+import Background from "./components/background/Background.jsx";
 
 const outerSvgProps = {
-  width: '100%',
-  height: '100vh',
+  width: "100%",
+  height: "100vh",
   style: {
-    position: 'fixed',
+    position: "fixed",
     top: 0,
     left: 0,
-    zIndex: -10
-  }
+    zIndex: -10,
+  },
 };
 
 // const defsPatternProps = {
@@ -28,13 +28,9 @@ const outerSvgProps = {
 //   fillOpacity: 0.25
 // };
 
-createRoot(document.getElementById('root')).render(
+createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <Background 
-      containerProps={ outerSvgProps }
-      seed='7329663'
-    />
-    <App />
-  </StrictMode>,
-)
-
+    <Background containerProps={outerSvgProps} seed="7329664" />
+    <IndexPage />
+  </StrictMode>
+);

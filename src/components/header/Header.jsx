@@ -1,22 +1,35 @@
-import './Header.css'
+import PropTypes from "prop-types";
 
-export default function Header() {
+import "./Header.css";
+
+export default function Header({ profileData }) {
+  const username = profileData.login;
+  const avatarUrl = profileData.avatar;
+
   return (
     <>
-      <header class="main-header">
-        <nav class="main-header__nav">
-          <ul class="main-header__nav-list">
-            <li class="main-header__nav-item"><a href="/">Home</a></li>
-            <li class="main-header__nav-item"><a href="/portfolio">Portfolio</a></li>
+      <header className="main-header">
+        <nav className="main-header__nav">
+          <ul className="main-header__nav-list">
+            <li className="main-header__nav-item">
+              <a href="/">Home</a>
+            </li>
+            <li className="main-header__nav-item">
+              <a href="/portfolio">Portfolio</a>
+            </li>
           </ul>
-          <a href="/about-me" class="main-header__icon-div">
-            FenrisuIven
-            <img src='./placeholder-main-icon.jpg' alt="Placeholder cat icon" class="header__main-icon" />
+          <a href="/about-me" className="main-header__icon-div">
+            {username}
+            <img src={avatarUrl} alt="Placeholder cat icon" className="header__main-icon" />
           </a>
         </nav>
       </header>
     </>
-  )
+  );
 }
+
+Header.propTypes = {
+  profileData: PropTypes.object,
+};
 
 /* <img src='./placeholder-main-icon.png' alt="Placeholder cat icon" class="header__main-icon" /> */

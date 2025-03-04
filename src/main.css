@@ -1,15 +1,19 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:light,regular,medium,semibold,bold");
+
 * {
   margin: 0;
   padding: 0;
   text-align: center;
-  font-family: Verdana, sans-serif;
+
+  font-family: "Poppins", sans-serif;
+  line-height: 1.25rem;
 
   --root-green: #1d4b3f;
   --root-white: #ebf7f2;
   --root-highlight-green: #337058;
   --root-highlight-white: #b6d8ca;
 
-  --profile-green:#66cfb3;
+  --profile-green: #66cfb3;
 
   --root-rgb-green: 29, 75, 63;
   --root-rgb-white: 235, 247, 242;
@@ -23,6 +27,22 @@ body {
   margin: 0;
   padding: 0;
   min-width: 100%;
+  overflow: hidden;
 
   background-color: var(--root-white);
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+h2 {
+  font-weight: 600;
+  letter-spacing: 0.1rem;
+}
+h3 {
+  font-weight: 600;
+  letter-spacing: 0.05rem;
 }

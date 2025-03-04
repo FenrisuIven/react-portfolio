@@ -8,13 +8,13 @@ export async function parseSVG(svgUrl) {
 
 export function encodeSVG(svgDoc) {
   const svgElement = svgDoc.documentElement;
-  console.log(svgDoc)
+  console.log(svgDoc);
   const svgString = new XMLSerializer().serializeToString(svgElement);
 
   // Encode as Data URL
   const encodedSVG = encodeURIComponent(svgString)
-      .replace(/'/g, "%27")
-      .replace(/"/g, "%22");
+    .replace(/'/g, "%27")
+    .replace(/"/g, "%22");
 
   return encodedSVG;
   // const dataURL = `url("data:image/svg+xml,${encodedSVG}")`;

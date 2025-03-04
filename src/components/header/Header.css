@@ -1,7 +1,9 @@
 .main-header {
   position: sticky;
   top: 0;
-  background: var(--root-green);
+  background: rgba(var(--root-rgb-green), 0.3);
+  backdrop-filter: blur(25px);
+
   color: var(--root-white);
 
   a {
