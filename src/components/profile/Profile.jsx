@@ -10,22 +10,31 @@ function Profile({ profileData, description }) {
   };
 
   const username = profileData.login;
-  const bio = profileData.bio;
+  const name = profileData.name;
   const avatarUrl = profileData.avatar;
 
   return (
     <>
       <div className="profile-card" onScrollCapture={func}>
         <div className="profile-card__logo-card">
-          <div className="profile-card__logo">
+          <div className="profile-card__logo margin-bottom-2rem">
             <img src={avatarUrl} />
           </div>
-          <h3 className="profile-card__username">{username}</h3>
-          <span className="profile-card__short-info">{bio}</span>
+          <h3 className="profile-card__username">{name}</h3>
+          <span className="profile-card__short-info">{username}</span>
         </div>
         <div className="separator vertical"></div>
         <div className="profile-card__details">
-          <Markdown remarkPlugins={[remarkGfm]}>{description}</Markdown>
+          <Markdown
+            remarkPlugins={[remarkGfm]}
+            components={{
+              h4: ({ children }) => {
+                return <h4 style={{ padding: "0.3rem" }}>{children}</h4>;
+              },
+            }}
+          >
+            {description}
+          </Markdown>
         </div>
       </div>
     </>

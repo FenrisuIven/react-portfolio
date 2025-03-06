@@ -8,6 +8,7 @@ export default async function parseGitHubProfile(profileUrl) {
         avatar: res.data.avatar_url,
         login: res.data.login,
         bio: res.data.bio,
+        name: res.data.name,
         repos: res.data.repos_url,
         profile: res.data.html_url,
       };
