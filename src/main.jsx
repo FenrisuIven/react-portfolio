@@ -2,8 +2,21 @@ import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import "./main.css";
 
-import IndexPage from "./components/indexPage/IndexPage.jsx";
+import IndexPage from "./components/indexPage/Page.jsx";
 import Background from "./components/background/Background.jsx";
+import Header from "./components/header/Header.jsx";
+
+import parseGitHubProfile from "./utils/parseGitHubProfile.js";
+import profileDescription from "./assets/data/profile_data.md";
+
+if (!localStorage["userData"]) {
+  console.log("re-fetch");
+  localStorage["userData"] = await parseGitHubProfile(
+    "https://api.github.com/users/FenrisuIven"
+  ).then((data) => JSON.stringify(data));
+}
+const profileData = JSON.parse(localStorage["userData"]);
+console.log({ localStorage });
 
 const containerProps = {
   width: "100%",
@@ -56,6 +69,10 @@ const pictureProps = {
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <Background type="picture" props={pictureProps} />
-    <IndexPage />
+    <Header profileData={profileData} />
+    <IndexPage
+      profileData={profileData}
+      profileDescription={profileDescription}
+    />
   </StrictMode>
 );
