@@ -5,7 +5,7 @@ import "./page.css";
 import Profile from "../profile/Profile";
 import MainSection from "./components/MainSection";
 
-function IndexPage({ profileData, profileDescription }) {
+function IndexPage({ profileData, profileDescription, children }) {
   const mainSectionTop = useRef(null);
   const mainSectionBot = useRef(null);
 
@@ -19,13 +19,13 @@ function IndexPage({ profileData, profileDescription }) {
         >
           <Profile profileData={profileData} description={profileDescription} />
         </MainSection>
-
+        <div></div>
         <MainSection
           ref={mainSectionBot}
           scrollToRef={mainSectionTop}
           scrollDirection="toTop"
         >
-          <Profile profileData={profileData} description={profileDescription} />
+          {children}
         </MainSection>
       </main>
     </>

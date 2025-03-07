@@ -1,13 +1,18 @@
-import { StrictMode } from "react";
+import { Children, createContext, StrictMode, useContext, useRef } from "react";
 import { createRoot } from "react-dom/client";
 import "./main.css";
 
-import IndexPage from "./components/indexPage/Page.jsx";
+import Page from "./components/indexPage/Page.jsx";
 import Background from "./components/background/Background.jsx";
 import Header from "./components/header/Header.jsx";
 
 import parseGitHubProfile from "./utils/parseGitHubProfile.js";
 import profileDescription from "./assets/data/profile_data.md";
+import ProjectCard from "./components/projectCard/ProjectCard.jsx";
+import {
+  CardsContext,
+  ProjectCardsDisplay,
+} from "./components/ProjectCardsDisplay/ProjectCardsDisplay.jsx";
 
 if (!localStorage["userData"]) {
   console.log("re-fetch");
@@ -66,13 +71,59 @@ const pictureProps = {
   },
 };
 
+function RootComponent() {
+  const { projs, currentPageIdx, moveToNext, moveToPrev } =
+    useContext(CardsContext);
+
+  return (
+    <>
+      <StrictMode>
+        <Background type="picture" props={pictureProps} />
+        <Header profileData={profileData} />
+        <Page profileData={profileData} profileDescription={profileDescription}>
+          <div className="proj-card__container">
+            {projs.map((proj, idx) => {
+              const isNext = currentPageIdx + 1 === idx;
+              const isPrev = currentPageIdx - 1 === idx;
+
+              const disabled = isPrev || isNext;
+              const first = idx === 0;
+              const last = idx === projs.length - 1;
+              const isActive = currentPageIdx === idx;
+              const hide = !isNext && !isPrev && !isActive;
+
+              return (
+                <ProjectCard
+                  key={idx}
+                  disabled={disabled}
+                  first={first}
+                  last={last}
+                  active={isActive}
+                  hide={hide}
+                  isPrev={isPrev}
+                  isNext={isNext}
+                  moveToNext={moveToNext}
+                  moveToPrev={moveToPrev}
+                >
+                  <div className="proj-card__left">
+                    <p>{proj.title}</p>
+                  </div>
+                  <div className="separator"></div>
+                  <div className="proj-card__right">
+                    <p>{proj.description}</p>
+                  </div>
+                </ProjectCard>
+              );
+            })}
+          </div>
+        </Page>
+      </StrictMode>
+    </>
+  );
+}
+
 createRoot(document.getElementById("root")).render(
-  <StrictMode>
-    <Background type="picture" props={pictureProps} />
-    <Header profileData={profileData} />
-    <IndexPage
-      profileData={profileData}
-      profileDescription={profileDescription}
-    />
-  </StrictMode>
+  <ProjectCardsDisplay>
+    <RootComponent />
+  </ProjectCardsDisplay>
 );
