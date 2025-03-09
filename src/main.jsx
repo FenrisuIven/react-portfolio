@@ -1,6 +1,8 @@
 import { StrictMode, useContext } from "react";
 import { createRoot } from "react-dom/client";
+
 import "./main.css";
+import "./assets/styles/colors.css";
 
 import Page from "./components/indexPage/Page.jsx";
 import Background from "./components/background/Background.jsx";

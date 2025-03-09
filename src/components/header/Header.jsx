@@ -18,9 +18,16 @@ export default function Header({ profileData }) {
               <a href="/portfolio">Portfolio</a>
             </li>
           </ul>
-          <a href="/about-me" className="main-header__icon-div">
+          <a
+            href={`https://github.com/${username}`}
+            className="main-header__icon"
+          >
             {username}
-            <img src={avatarUrl} alt="Placeholder cat icon" className="header__main-icon" />
+            <img
+              src={avatarUrl}
+              alt="Placeholder cat icon"
+              className="header__main-icon"
+            />
           </a>
         </nav>
       </header>
