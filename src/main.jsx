@@ -114,7 +114,7 @@ function RootComponent() {
                   moveToNext={moveToNext}
                   moveToPrev={moveToPrev}
                   style={{
-                    background: `color-mix(in srgb, ${proj.colors.primary} 60%, ${proj.colors.white} 20%)`,
+                    background: `color-mix(in srgb, ${proj.colors.primary} 40%, ${proj.colors.white} 10%)`,
                   }}
                 >
                   <div className="proj-card__left">
@@ -128,7 +128,34 @@ function RootComponent() {
                   </div>
                   <div className="separator vertical"></div>
                   <div className="proj-card__right">
-                    <Markdown remarkPlugins={[remarkGfm]}>
+                    <Markdown
+                      remarkPlugins={[remarkGfm]}
+                      components={{
+                        h2: ({ children }) => {
+                          return <h2 className="proj-title">{children}</h2>;
+                        },
+                        p: ({ children }) => {
+                          return (
+                            <p
+                              style={{
+                                padding: "0.3rem 0",
+                                textAlign: "justify",
+                              }}
+                            >
+                              {children}
+                            </p>
+                          );
+                        },
+                        hr: () => {
+                          return (
+                            <div
+                              className="separator"
+                              style={{ margin: "1rem 0", opacity: "0.5" }}
+                            />
+                          );
+                        },
+                      }}
+                    >
                       {ProjDescriptionRight}
                     </Markdown>
                   </div>

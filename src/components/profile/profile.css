@@ -63,18 +63,21 @@
   padding: 0 0.5rem;
   justify-items: center;
 
-  filter: drop-shadow(0 0.1rem 0.3rem rgba(var(--main-color), 1));
-
   scrollbar-width: thin;
   scrollbar-color: rgba(var(--main-color), 0.5) rgba(var(--secondary), 0);
   padding-right: 0.5rem;
   scrollbar-gutter: stable;
 
   h2 {
-    padding: 0.5rem 0;
+    padding-top: 1.5rem;
+    padding-bottom: 0.5rem;
   }
+  blockquote p {
+    padding: 0;
+  }
+
   p {
-    text-align: left;
+    text-align: justify;
     padding: 0.5rem 0;
     letter-spacing: 0.02rem;
     word-spacing: 0.1rem;

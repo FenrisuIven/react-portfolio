@@ -37,11 +37,17 @@ h2 {
 h3 {
   letter-spacing: 0.05rem;
 }
+blockquote {
+  opacity: 0.5;
+  place-self: center;
+}
 
-.separator.vertical {
-  width: 0.2rem;
-  height: 100%;
+.separator {
+  padding: 0.1rem;
   background-color: rgba(var(--root-rgb-white), 0.4);
   box-shadow: 0 0 0.4rem rgba(var(--root-rgb-dark-blue), 0.5);
   border-radius: 1rem;
+  &.vertical {
+    height: 100%;
+  }
 }

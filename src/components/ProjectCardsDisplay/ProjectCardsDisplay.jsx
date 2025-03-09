@@ -11,7 +11,7 @@ import {
 const CardsContext = createContext();
 
 function ProjectCardsDisplay({ children }) {
-  const projs = [ProjClockwork, ProjKnucklebones, ProjSeashell, ProjDBTest];
+  const projs = [ProjClockwork, ProjKnucklebones, ProjDBTest, ProjSeashell];
   const [currentPageIdx, setCurrentIdx] = useState(0);
 
   const moveToNext = () => {
