@@ -1,13 +1,37 @@
 .scroll-button {
+  display: grid;
   width: fit-content;
   background: transparent;
   border: none;
   font-size: 2rem;
   cursor: pointer;
-  transition: 0.2s;
 
   stroke: var(--root-white);
-  path {
-    filter: drop-shadow(0 0 0.3px var(--root-white));
+  svg.outer path {
+    filter: drop-shadow(0 0 0.4px var(--root-white));
+  }
+
+  svg {
+    transition: 0.2s;
+    &.outer {
+      grid-row: 1;
+      grid-column: 1;
+      opacity: 0.1;
+    }
+    &.inner {
+      grid-row: 1;
+      grid-column: 1;
+      opacity: 0.5;
+      left: 0;
+    }
+  }
+
+  &:hover svg {
+    &.outer {
+      opacity: 0.6;
+    }
+    &.inner {
+      opacity: 0.9;
+    }
   }
 }

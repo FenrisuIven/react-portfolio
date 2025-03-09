@@ -31,7 +31,7 @@
   z-index: 2;
   scroll-snap-align: center;
 
-  transition: 1s;
+  transition: 0.5s;
 
   &.disabled {
     &.next {
@@ -39,7 +39,7 @@
     }
     background: rgba(var(--profile-rgb-green), 0.3);
     backdrop-filter: blur(15px);
-    width: 60rem;
+    scale: 0.9;
     z-index: -1;
   }
   &.active {
@@ -54,7 +54,7 @@
   }
   &.hide {
     translate: 0 10%;
-    width: 60rem;
+    scale: 0.9;
     opacity: 0;
     z-index: -1;
   }

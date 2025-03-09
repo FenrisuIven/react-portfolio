@@ -14,7 +14,20 @@ function ScrollButton({ targetSectionRef, direction }) {
         targetSectionRef.current.scrollIntoView({ behavior: "smooth" });
       }}
     >
-      <ArrowSVG width="85px" height="45px" strokeWidth="1" style={style} />
+      <ArrowSVG
+        width="85px"
+        height="45px"
+        strokeWidth="1"
+        style={style}
+        className="outer"
+      />
+      <ArrowSVG
+        width="85px"
+        height="45px"
+        strokeWidth="0.6"
+        style={style}
+        className="inner"
+      />
     </button>
   );
 }

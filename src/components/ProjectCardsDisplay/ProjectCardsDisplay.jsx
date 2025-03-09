@@ -1,31 +1,12 @@
 import PropTypes from "prop-types";
 import { createContext, useState } from "react";
 
+import { ProjClockwork } from "../../utils/index";
+
 const CardsContext = createContext();
 
 function ProjectCardsDisplay({ children }) {
-  const projs = [
-    {
-      title: "1",
-      description: "",
-    },
-    {
-      title: "2",
-      description: "",
-    },
-    {
-      title: "3",
-      description: "",
-    },
-    {
-      title: "4",
-      description: "",
-    },
-    {
-      title: "5",
-      description: "",
-    },
-  ];
+  const projs = [ProjClockwork, ProjClockwork, ProjClockwork];
   const [currentPageIdx, setCurrentIdx] = useState(0);
 
   const moveToNext = () => {

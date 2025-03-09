@@ -1,4 +1,4 @@
-import { Children, createContext, StrictMode, useContext, useRef } from "react";
+import { StrictMode, useContext } from "react";
 import { createRoot } from "react-dom/client";
 import "./main.css";
 
@@ -13,6 +13,8 @@ import {
   CardsContext,
   ProjectCardsDisplay,
 } from "./components/ProjectCardsDisplay/ProjectCardsDisplay.jsx";
+import Markdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 
 if (!localStorage["userData"]) {
   console.log("re-fetch");
@@ -92,6 +94,9 @@ function RootComponent() {
               const isActive = currentPageIdx === idx;
               const hide = !isNext && !isPrev && !isActive;
 
+              const ProjDescriptionLeft = proj.left;
+              const ProjDescriptionRight = proj.right;
+
               return (
                 <ProjectCard
                   key={idx}
@@ -106,11 +111,15 @@ function RootComponent() {
                   moveToPrev={moveToPrev}
                 >
                   <div className="proj-card__left">
-                    <p>{proj.title}</p>
+                    <Markdown remarkPlugins={[remarkGfm]}>
+                      {ProjDescriptionLeft}
+                    </Markdown>
                   </div>
                   <div className="separator"></div>
                   <div className="proj-card__right">
-                    <p>{proj.description}</p>
+                    <Markdown remarkPlugins={[remarkGfm]}>
+                      {ProjDescriptionRight}
+                    </Markdown>
                   </div>
                 </ProjectCard>
               );
