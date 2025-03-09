@@ -15,6 +15,7 @@ function ProjectCard(
     moveToPrev,
     moveToNext,
     children,
+    style,
   },
   ref
 ) {
@@ -23,6 +24,7 @@ function ProjectCard(
       <div
         ref={ref}
         className={`proj-card ${disabled ? "disabled " : ""}${active ? "active " : ""}${hide ? "hide " : ""}${first ? "first " : ""}${last ? "last " : ""}${isNext ? "next " : ""}${isPrev ? "prev" : ""}`.trim()}
+        style={style}
       >
         <div className="proj-card__view-prev" onClick={moveToPrev}></div>
         {children}
@@ -43,6 +45,7 @@ ProjectCard.propTypes = {
   moveToPrev: PropTypes.func,
   moveToNext: PropTypes.func,
   children: PropTypes.element,
+  style: PropTypes.object,
 };
 
 export default forwardRef(ProjectCard);

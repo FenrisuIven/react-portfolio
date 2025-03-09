@@ -96,8 +96,10 @@ function RootComponent() {
               const isActive = currentPageIdx === idx;
               const hide = !isNext && !isPrev && !isActive;
 
-              const ProjDescriptionLeft = proj.left;
+              const projLeft_ImageUrl = proj.left;
               const ProjDescriptionRight = proj.right;
+
+              console.log(proj.colors.primaryRGB);
 
               return (
                 <ProjectCard
@@ -111,13 +113,20 @@ function RootComponent() {
                   isNext={isNext}
                   moveToNext={moveToNext}
                   moveToPrev={moveToPrev}
+                  style={{
+                    background: `color-mix(in srgb, ${proj.colors.primary} 60%, ${proj.colors.white} 20%)`,
+                  }}
                 >
                   <div className="proj-card__left">
-                    <Markdown remarkPlugins={[remarkGfm]}>
-                      {ProjDescriptionLeft}
-                    </Markdown>
+                    <div
+                      className="proj-card__left-img"
+                      data-primary-color={proj.colors.primaryRGB}
+                      style={{
+                        backgroundImage: `url(${projLeft_ImageUrl})`,
+                      }}
+                    ></div>
                   </div>
-                  <div className="separator"></div>
+                  <div className="separator vertical"></div>
                   <div className="proj-card__right">
                     <Markdown remarkPlugins={[remarkGfm]}>
                       {ProjDescriptionRight}

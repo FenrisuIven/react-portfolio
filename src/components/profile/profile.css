@@ -89,11 +89,3 @@
     }
   }
 }
-
-.separator.vertical {
-  width: 0.2rem;
-  height: 100%;
-  background-color: rgba(var(--main-color), 0.4);
-  box-shadow: 0 0 0.4rem rgba(var(--secondary), 0.5);
-  border-radius: 1rem;
-}

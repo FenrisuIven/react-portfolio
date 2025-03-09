@@ -1,0 +1,10 @@
+const clockworkColors = {
+  primary: "#d6a26d",
+  primaryRGB: "214, 162, 109",
+  secondary: "#040404",
+  secondaryRGB: "4, 4, 4",
+  white: "#fff5f0",
+  whiteRGB: "255, 245, 240",
+};
+
+export default clockworkColors;
