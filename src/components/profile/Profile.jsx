@@ -17,7 +17,7 @@ function Profile({ profileData, description }) {
     <>
       <div className="profile-card" onScrollCapture={func}>
         <div className="profile-card__logo-card">
-          <div className="profile-card__logo margin-bottom-2rem">
+          <div className="profile-card__logo">
             <img src={avatarUrl} />
           </div>
           <h3 className="profile-card__username">{name}</h3>
