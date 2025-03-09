@@ -32,11 +32,3 @@ main {
 .main-section__container.reverse {
   flex-direction: column-reverse;
 }
-
-.scroll-button {
-  width: fit-content;
-  background: transparent;
-  border: none;
-  font-size: 2rem;
-  cursor: pointer;
-}

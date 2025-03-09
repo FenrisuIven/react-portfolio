@@ -1,8 +1,11 @@
 .main-header {
-  position: sticky;
+  position: fixed;
   top: 0;
-  background: rgba(var(--root-rgb-green), 0.3);
-  backdrop-filter: blur(25px);
+  width: 100%;
+  background: rgba(var(--root-rgb-highlight-green), 0.4);
+  backdrop-filter: blur(10px);
+
+  z-index: 2;
 
   color: var(--root-white);
 

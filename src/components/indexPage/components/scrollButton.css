@@ -1,0 +1,13 @@
+.scroll-button {
+  width: fit-content;
+  background: transparent;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  transition: 0.2s;
+
+  stroke: var(--root-white);
+  path {
+    filter: drop-shadow(0 0 0.3px var(--root-white));
+  }
+}

@@ -24,6 +24,7 @@ function IndexPage({ profileData, profileDescription, children }) {
           ref={mainSectionBot}
           scrollToRef={mainSectionTop}
           scrollDirection="toTop"
+          style={{ justifyContent: "flex-start" }}
         >
           {children}
         </MainSection>
@@ -35,6 +36,7 @@ function IndexPage({ profileData, profileDescription, children }) {
 IndexPage.propTypes = {
   profileData: PropTypes.object,
   profileDescription: PropTypes.object,
+  children: PropTypes.arrayOf(PropTypes.element),
 };
 
 export default IndexPage;

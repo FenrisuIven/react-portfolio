@@ -1,8 +1,12 @@
 import PropTypes from "prop-types";
-import { useEffect, useRef } from "react";
+
+import "./scrollButton.css";
+import ArrowSVG from "../../../assets/svg/arrow.svg?react";
 
 function ScrollButton({ targetSectionRef, direction }) {
-  const content = direction === "toTop" ? "▲" : "▼";
+  const style = {
+    transform: direction === "toTop" ? "rotate(180deg)" : "",
+  };
   return (
     <button
       className="scroll-button"
@@ -10,7 +14,7 @@ function ScrollButton({ targetSectionRef, direction }) {
         targetSectionRef.current.scrollIntoView({ behavior: "smooth" });
       }}
     >
-      {content}
+      <ArrowSVG width="85px" height="45px" strokeWidth="1" style={style} />
     </button>
   );
 }
