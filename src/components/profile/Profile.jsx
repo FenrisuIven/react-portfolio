@@ -1,4 +1,4 @@
-import "./Profile.css";
+import "./profile.css";
 import { PropTypes } from "prop-types";
 
 import Markdown from "react-markdown";
