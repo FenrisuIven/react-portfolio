@@ -1,0 +1,16 @@
+* {
+  --root-tan: #e0b895;
+  --root-rgb-tan: 224, 184, 149;
+
+  --root-white: #fcfcfc;
+  --root-rgb-white: 252, 252, 252;
+
+  --root-dark-blue: #2a4a64;
+  --root-rgb-dark-blue: 42, 74, 100;
+
+  --root-indigo: #1f4270;
+  --root-rgb-indigo: 31, 66, 112;
+
+  --root-black: #0b0e13;
+  --root-rgb-black: 11, 14, 19;
+}

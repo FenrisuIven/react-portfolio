@@ -1,0 +1,34 @@
+main {
+  width: 100%;
+  height: 100vh;
+  max-height: 100vh;
+  padding: 1rem 0;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  place-self: center;
+
+  row-gap: 2rem;
+
+  overflow-y: auto;
+  scroll-snap-type: y mandatory;
+  scrollbar-width: none;
+}
+
+.main-section__container {
+  min-height: 100%;
+  min-width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+  scroll-snap-align: center;
+}
+
+.main-section__container.reverse {
+  flex-direction: column-reverse;
+}

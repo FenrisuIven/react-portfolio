@@ -1,0 +1,121 @@
+.proj-card__container {
+  --main-color: var(--root-rgb-white);
+  --secondary: var(--root-rgb-dark-blue);
+
+  width: 100%;
+  max-height: 90%;
+  height: 90%;
+  overflow-y: hidden;
+  display: grid;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.proj-card {
+  display: grid;
+  grid-template-columns: 30% 0.2rem auto;
+  grid-template-rows: auto 80% auto;
+  column-gap: 0.5rem;
+  justify-self: center;
+  overflow: hidden;
+
+  width: 75rem;
+  min-height: 65vh;
+  max-height: 65vh;
+  padding: 0 1rem;
+
+  border: 0.2rem solid rgba(var(--root-rgb-white), 0.5);
+  border-radius: 1rem;
+  box-shadow: 0 0 1rem rgba(var(--root-rgb-green), 0.3);
+  backdrop-filter: blur(50px);
+
+  position: absolute;
+  top: 5%;
+  z-index: 2;
+  scroll-snap-align: center;
+
+  transition: 0.5s;
+
+  &.disabled {
+    &.next {
+      translate: 0 20%;
+    }
+    background: rgba(var(--profile-rgb-green), 0.3);
+    backdrop-filter: blur(15px);
+    scale: 0.9;
+    z-index: -1;
+  }
+  &.active {
+    &.first {
+      translate: 0 0;
+    }
+    &.last {
+      translate: 0 20%;
+    }
+    translate: 0 10%;
+    z-index: 2;
+  }
+  &.hide {
+    translate: 0 10%;
+    scale: 0.9;
+    opacity: 0;
+    z-index: -1;
+  }
+}
+
+.proj-card__right {
+  padding: 1rem;
+  .proj-title {
+    margin-bottom: 0.5rem;
+    font-size: 1.8rem;
+    && a {
+      color: var(--root-black);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(var(--root-rgb-black), 0.8);
+
+      display: block;
+      width: fit-content;
+      place-self: center;
+      padding: 0.2rem;
+
+      &&:hover {
+        opacity: 0.5;
+      }
+    }
+  }
+}
+
+.proj-card__left {
+  padding: 0 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.proj-card__left-img {
+  height: 80%;
+  width: 100%;
+  background-position: center;
+  background-size: 55rem;
+  border-radius: 1rem;
+  border: 0.2rem solid rgba(var(--main-color), 0.2);
+  box-shadow: 0 0 0.7rem rgba(var(--root-rgb-black), 0.3);
+}
+
+.proj-card__view-prev,
+.proj-card__view-next {
+  background-color: transparent;
+  color: transparent;
+  width: 100%;
+  padding: 1rem 0;
+  cursor: pointer;
+}
+
+.proj-card__view-prev {
+  grid-row: 1;
+  grid-column: span 3;
+}
+
+.proj-card__view-next {
+  grid-row: 3;
+  grid-column: span 3;
+}
