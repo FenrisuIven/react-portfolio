@@ -23,15 +23,14 @@
 }
 
 .profile-card__logo-card {
+  height: 80%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-evenly;
+
   row-gap: 0.5rem;
   padding: 0 0.5rem;
-
-  .profile-card__logo {
-    margin-bottom: 1rem;
-  }
 
   .profile-card__username {
     font-size: 1.5rem;
@@ -55,18 +54,33 @@
   filter: drop-shadow(0 0.1rem 0.07rem rgba(var(--main-color), 0.5));
 }
 
-.profile-card__details {
-  min-height: 45vh;
-  max-height: 45vh;
-  overflow: auto;
-  overflow-x: hidden;
-  padding: 0 0.5rem;
-  justify-items: center;
+.profile-card__socials {
+  width: 100%;
+  place-self: flex-end;
+  span {
+    display: block;
+    text-align: left;
+  }
+  a {
+    color: var(--root-black);
+  }
+}
 
-  scrollbar-width: thin;
-  scrollbar-color: rgba(var(--main-color), 0.5) rgba(var(--secondary), 0);
-  padding-right: 0.5rem;
-  scrollbar-gutter: stable;
+.profile-card__details {
+  .scrollable {
+    height: 35vh;
+    max-height: 35vh;
+    overflow: auto;
+    overflow-x: hidden;
+    padding: 0 0.5rem;
+    margin: 0.5rem 0;
+    justify-items: center;
+
+    scrollbar-width: thin;
+    scrollbar-color: rgba(var(--main-color), 0.5) rgba(var(--secondary), 0);
+    padding-right: 0.5rem;
+    scrollbar-gutter: stable;
+  }
 
   h2 {
     padding-top: 1.5rem;
