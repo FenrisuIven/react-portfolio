@@ -10,8 +10,8 @@
 
   background: linear-gradient(
     to bottom,
-    rgba(var(--main-color), 0.5),
-    rgba(var(--dark-color), 0.2)
+    rgba(var(--main-color), 0.8),
+    rgba(var(--dark-color), 0.5)
   );
   backdrop-filter: blur(10px);
   filter: drop-shadow(0 0.5rem 0.4rem rgba(var(--main-color), 0.6));
@@ -50,7 +50,7 @@
   padding: 0.7rem 1rem;
 
   &&:hover {
-    background: rgba(var(--main-color), 0.2);
+    background: rgba(var(--main-color), 0.9);
   }
 }
 
