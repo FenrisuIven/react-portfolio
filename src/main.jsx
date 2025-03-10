@@ -37,25 +37,26 @@ const containerProps = {
     zIndex: -10,
   },
 };
-const widthHeight = {
-  width: 800,
-  height: 800,
-};
 
-const fractalNoiseProps = {
-  containerProps,
-  seed: "7329664",
-};
+// const widthHeight = {
+//   width: 800,
+//   height: 800,
+// };
 
-const topographyProps = {
-  containerProps,
-  defsPatternProps: widthHeight,
-  svgPatternProps: {
-    ...widthHeight,
-    fill: "var(--root-highlight-green)",
-    fillOpacity: 0.25,
-  },
-};
+// const fractalNoiseProps = {
+//   containerProps,
+//   seed: "7329664",
+// };
+
+// const topographyProps = {
+//   containerProps,
+//   defsPatternProps: widthHeight,
+//   svgPatternProps: {
+//     ...widthHeight,
+//     fill: "var(--root-highlight-green)",
+//     fillOpacity: 0.25,
+//   },
+// };
 
 const pictureProps = {
   containerProps: {

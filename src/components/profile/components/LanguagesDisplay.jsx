@@ -1,26 +1,23 @@
-const targetLanguages = [
-  "js",
-  "ts",
-  "node",
-  "html",
-  "css",
-  "react",
-  "c_sharp",
-  "c_plus",
-  "c",
-  "git",
-  "github",
-];
-const targetScheme = "color";
-const imagesExtension = "svg";
+const rawLanguages = import.meta.glob(
+  "../../../assets/svg/languages/*_color.svg"
+);
+const importLanguages = async () => {
+  const promises = Object.values(rawLanguages).map((dynamicImport) =>
+    dynamicImport()
+  );
+
+  const awaitedPromises = await Promise.all(promises);
+  return awaitedPromises.map((module) => module.default);
+};
+const languages = await importLanguages();
 
 function LanguagesDisplay() {
   return (
     <>
-      {targetLanguages.map((lang, idx) => {
+      {languages.map((lang, idx) => {
         return (
           <div
-            key={idx}
+            key={lang}
             style={{
               gridRow: "1",
               gridColumn: `${idx + 1}`,
@@ -28,11 +25,7 @@ function LanguagesDisplay() {
               padding: "0.5rem 0",
             }}
           >
-            <img
-              width="50px"
-              height="50px"
-              src={`/languages/${lang}_${targetScheme}.${imagesExtension}`}
-            />
+            <img width="50px" height="50px" src={lang} />
           </div>
         );
       })}
