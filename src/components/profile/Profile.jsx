@@ -65,14 +65,14 @@ function Profile({ profileData, description }) {
                   return (
                     <div
                       style={{
-                        maxWidth: "40vw",
+                        width: "90%",
                         display: "grid",
                         gridTemplateColumns: "repeat(11, 50px)",
                         columnGap: "2rem",
                         listStyle: "none",
                         overflowY: "hidden",
                         overflowX: "scroll",
-                        scrollbarWidth: "none",
+                        scrollbarWidth: "thin",
                       }}
                     >
                       <LanguagesDisplay />
