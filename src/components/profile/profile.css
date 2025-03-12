@@ -89,6 +89,7 @@
   }
   blockquote p {
     padding: 0;
+    text-align: center;
   }
 
   p {

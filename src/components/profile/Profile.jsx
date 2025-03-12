@@ -44,7 +44,8 @@ function Profile({ profileData, description }) {
         <div className="profile-card__details">
           <h2>Mostova Alona</h2>
           <blockquote>
-            <p>FenrisuIven</p>
+            <p>Aspiring web-developer</p>
+            <p>Node, JS, HTML, CSS, React</p>
           </blockquote>
           <div className="scrollable">
             <Markdown
